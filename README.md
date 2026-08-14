@@ -1,2 +1,2 @@
 # MediSlot_Telemedicine-Appointment-Booking-System
-MediSlot is a telemedicine appointment booking platform where patients search doctors, book and pay for appointments online, and manage prescriptions , while doctors handle schedules and admins verify accounts. Built with HTML/CSS/JS, PHP, and MySQL for CSE327.
+MediSlot is a web-based telemedicine platform that lets patients search for doctors, book appointments, view medical records, and manage digital prescriptions. It also integrates Google Gemini AI to provide medicine information, including uses, side effects, dosage guidelines, and precautions, helping users make informed healthcare decisions.
