@@ -109,7 +109,7 @@ require_once '../header.php';
                                 <th>Doctor</th>
                                 <th>Fee</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th style="min-width: 220px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,22 +142,34 @@ require_once '../header.php';
                                         </span>
                                     </td>
                                     <td>
-                                        <?php if (in_array($a['status'], ['pending', 'confirmed'])): ?>
-                                            <a href="appointments.php?cancel=<?php echo $a['appointment_id']; ?>" 
-                                               class="btn btn-sm btn-outline-danger"
-                                               onclick="return confirm('Are you sure you want to cancel this appointment?')">
-                                                Cancel
-                                            </a>
-                                        <?php else: ?>
-                                            <span class="text-muted">—</span>
-                                        <?php endif; ?>
+                                        <div class="d-flex gap-1 flex-wrap">
 
-                                        <?php if ($a['status'] === 'pending'): ?>
-                                            <a href="payment.php?appointment_id=<?php echo $a['appointment_id']; ?>" 
-                                               class="btn btn-sm btn-success">
-                                                Pay Now
-                                            </a>
-                                        <?php endif; ?>
+                                            <!-- Reminder AI Button -->
+                                            <?php if (in_array($a['status'], ['pending', 'confirmed'])): ?>
+                                                <a href="appointment_reminder.php?appointment_id=<?php echo $a['appointment_id']; ?>" 
+                                                   class="btn btn-sm btn-warning">
+                                                    <i class="bi bi-bell"></i> Reminder
+                                                </a>
+                                            <?php endif; ?>
+
+                                            <!-- Cancel Button -->
+                                            <?php if (in_array($a['status'], ['pending', 'confirmed'])): ?>
+                                                <a href="appointments.php?cancel=<?php echo $a['appointment_id']; ?>" 
+                                                   class="btn btn-sm btn-outline-danger"
+                                                   onclick="return confirm('Are you sure you want to cancel this appointment?')">
+                                                    Cancel
+                                                </a>
+                                            <?php endif; ?>
+
+                                            <!-- Pay Now Button -->
+                                            <?php if ($a['status'] === 'pending'): ?>
+                                                <a href="payment.php?appointment_id=<?php echo $a['appointment_id']; ?>" 
+                                                   class="btn btn-sm btn-success">
+                                                    Pay Now
+                                                </a>
+                                            <?php endif; ?>
+
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
