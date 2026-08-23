@@ -54,6 +54,9 @@ require_once 'header.php';
                 <a href="login.php" class="btn btn-outline-light btn-hero">
                     <i class="bi bi-box-arrow-in-right me-2"></i>Login
                 </a>
+                <a href="admin/login.php" class="btn btn-outline-light btn-hero">
+                    <i class="bi bi-shield-lock me-2"></i>Admin
+                </a>
             </div>
         </div>
     </div>
