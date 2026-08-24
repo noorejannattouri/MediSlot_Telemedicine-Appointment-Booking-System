@@ -47,17 +47,44 @@ MediSlot uses AI agents to handle tasks that would otherwise require a human doc
 
 ```
 medislot/
-├── prototype/
-│   └── medislot-prototype.html   # standalone frontend prototype (HTML/CSS/JS)
-├── backend/                      # PHP application — auth, appointments, payments (in progress)
-│   ├── config/                    # database connection & app settings
-│   ├── includes/                  # shared PHP — auth check, header/footer, helpers
-│   ├── api/                       # endpoints — doctors, appointments, payments, users
-│   └── admin/                     # admin-only pages — verify doctors, manage users
-├── database/
-│   ├── schema.sql                 # table definitions (users, doctors, appointments, prescriptions, payments)
-│   └── seed.sql                   # sample/demo data
-├── docs/                          # requirements, UML diagrams, proposal deck
+├── config.php                 # Database connection & app settings
+├── header.php                 # Common header / navbar
+├── footer.php                 # Common footer
+├── home.php                   # Landing page
+├── login.php                  # User login
+├── logout.php                 # Session destroy
+├── signup.php                 # Patient registration
+├── signup_doctor.php          # Doctor registration
+├── index.php                  # Patient dashboard (old)
+│
+├── patient/                   # Patient module
+│   ├── dashboard.php          # Patient home
+│   ├── search_doctors.php     # Search & filter doctors
+│   ├── doctor_profile.php     # Doctor details + time slots
+│   ├── book_appointment.php   # Book appointment
+│   ├── payment.php            # Payment processing
+│   ├── appointments.php       # View / cancel appointments
+│   ├── appointment_reminder.php # AI appointment reminder
+│   ├── medicine_assistant.php # Medicine AI (Gemini)
+│   ├── doctor_matching.php    # AI doctor matching
+│   ├── prescriptions.php      # View prescriptions
+│   ├── medical_records.php    # View medical records
+│   └── profile.php            # Edit patient profile
+│
+├── doctor/                    # Doctor module
+│   ├── dashboard.php          # Doctor home
+│   ├── view_appointments.php  # Manage appointments
+│   ├── issue_prescription.php # Issue prescription
+│   ├── patient_records.php    # View patient records
+│   └── profile.php            # Edit doctor profile
+│
+├── tests/                     # Unit testing
+│   ├── PasswordTest.php
+│   ├── ValidationTest.php
+│   └── AppointmentStatusTest.php
+│
+├── phpunit.xml                # PHPUnit configuration
+├── composer.json              # Composer dependencies
 └── README.md
 ```
 ### Unit Testing
