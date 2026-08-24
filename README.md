@@ -60,3 +60,46 @@ medislot/
 ├── docs/                          # requirements, UML diagrams, proposal deck
 └── README.md
 ```
+### Unit Testing
+Unit testing has been implemented in this project using PHPUnit to ensure the correctness and reliability of core functionalities.
+
+### Purpose
+The main goal of unit testing in this project is to verify that important parts of the system work correctly, such as:
+
+*Password hashing and verification
+
+*Email validation
+
+*Input validation
+
+*Appointment status validation
+
+### Tools Used
+
+*PHPUnit 11
+
+*Composer
+
+### Test Structure
+```
+tests/
+├── PasswordTest.php
+├── ValidationTest.php
+└── AppointmentStatusTest.php
+```
+### How to Run the Tests
+
+1. Install the required packages:
+```
+composer install
+```
+2. Run the unit tests:
+```
+php vendor/bin/phpunit
+```
+
+### Test Results
+```
+OK (6 tests, 11 assertions)
+```
+All test cases passed successfully, which confirms that the core logic of the MediSlot system is working properly.
